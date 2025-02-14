@@ -1,7 +1,9 @@
-const User = require("../models/User");
-const bcrypt = require("bcryptjs");
-const jwt = require("jsonwebtoken");
-const nodemailer = require("nodemailer");
+import bcrypt from "bcryptjs";
+import jwt from "jsonwebtoken";
+import User from "../models/User";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const register = async (req, res) => {
   const { firstName, lastName, gender, email, password } = req.body;

@@ -19,5 +19,9 @@ app.use(express.json());
 app.use("/uploads", express.static("uploads"));
 app.use("/api/auth", authRoutes);
 
+app.get("/", (req, res) => {
+  console.log("Hello");
+});
+
 const PORT = process.env.PORT || 9998;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
