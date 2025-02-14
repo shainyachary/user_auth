@@ -11,11 +11,8 @@ import ForgotPassword from "./pages/ForgotPassword";
 import ResetPassword from "./pages/ResetPassword";
 import { useEffect, useState } from "react";
 import "./App.css";
-import axios from "axios";
 function App() {
   const [token, setToken] = useState(localStorage.getItem("token"));
-
-  axios.defaults.withCredentials = true;
 
   useEffect(() => {
     const storedToken = localStorage.getItem("token");
