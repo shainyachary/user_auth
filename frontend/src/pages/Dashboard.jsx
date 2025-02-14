@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { getDashboard } from "../api";
 
@@ -42,7 +42,7 @@ const Dashboard = ({ onLogout }) => {
       <p>Gender: {user?.gender}</p>
       {user?.profileImage && (
         <img
-          src={`http://localhost:5000/${user.profileImage}`}
+          src={`http://localhost:3000/${user.profileImage}`}
           alt="Profile"
           width="150"
         />

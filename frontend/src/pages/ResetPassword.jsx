@@ -1,11 +1,11 @@
-import React from "react";
-import { useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import { Formik, Form, Field, ErrorMessage } from "formik";
 import * as Yup from "yup";
 import { resetPassword } from "../api";
 
 const ResetPassword = () => {
   const { token } = useParams();
+  const navigate = useNavigate();
 
   return (
     <Formik
@@ -19,6 +19,7 @@ const ResetPassword = () => {
         try {
           await resetPassword(token, values);
           alert("Password reset successfully!");
+          navigate("/login");
         } catch (error) {
           alert(error.response?.data?.message || "Error resetting password");
         }
