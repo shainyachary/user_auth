@@ -11,7 +11,7 @@ const app = express();
 app.use(
   cors({
     origin: ["https://user-auth-api-eight.vercel.app/"],
-    methods: ["GET", "POST"],
+    methods: ["POST", "GET"],
     credentials: true,
   })
 );
