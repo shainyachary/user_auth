@@ -25,12 +25,32 @@ const ResetPassword = () => {
         }
       }}
     >
-      <Form>
-        <h2>Reset Password</h2>
-        <Field name="password" type="password" placeholder="New Password" />
-        <ErrorMessage name="password" component="p" />
-        <button type="submit">Reset Password</button>
-      </Form>
+      <div className="flex min-h-screen justify-center items-center w-full">
+        <Form className="border border-gray-500 rounded-[.2rem] py-5 px-6 bg-white w-80 md:w-md m-3 shadow-lg">
+          <h2 className="text-3xl font-semibold tracking-[1px] text-center mb-7">
+            Reset Password
+          </h2>
+          <div className="mb-4">
+            <Field
+              name="password"
+              type="password"
+              placeholder="New Password"
+              className="block w-full border border-gray-300 rounded-[.1rem] py-3 px-4 text-base outline-0 text-gray-600"
+            />
+            <ErrorMessage
+              name="password"
+              component="p"
+              className="text-red-600 text-[14px] tracking-[1px] pl-[4px]"
+            />
+          </div>
+          <button
+            type="submit"
+            className="bg-teal-800 rounded-[.5rem] text-white font-bold w-full py-3 mt-2 mb-3 uppercase tracking-[2px] hover:bg-teal-600"
+          >
+            Reset Password
+          </button>
+        </Form>
+      </div>
     </Formik>
   );
 };

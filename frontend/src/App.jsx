@@ -10,7 +10,7 @@ import Dashboard from "./pages/Dashboard";
 import ForgotPassword from "./pages/ForgotPassword";
 import ResetPassword from "./pages/ResetPassword";
 import { useEffect, useState } from "react";
-
+import "./App.css";
 function App() {
   const [token, setToken] = useState(localStorage.getItem("token"));
 
