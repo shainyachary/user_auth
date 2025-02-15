@@ -10,7 +10,10 @@ const app = express();
 const PORT = process.env.PORT || 9998;
 app.use(
   cors({
-    origin: ["http://localhost:5173/"],
+    origin: [
+      "http://localhost:5173/",
+      "https://user-auth-frontend-gules.vercel.app/",
+    ],
     methods: ["POST", "GET"],
     credentials: true,
   })
