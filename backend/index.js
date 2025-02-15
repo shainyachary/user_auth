@@ -7,6 +7,7 @@ import mongoose from "mongoose";
 dotenv.config();
 
 const app = express();
+const PORT = process.env.PORT || 9998;
 app.use(
   cors({
     origin: ["http://localhost:5173/"],
@@ -18,7 +19,9 @@ app.use(express.json());
 app.use("/uploads", express.static("uploads"));
 app.use("/api/auth", authRoutes);
 
-const PORT = process.env.PORT || 9998;
+app.get("/", (req, res) => {
+  res.json("Hello");
+});
 
 mongoose
   .connect(process.env.MONGO_URI)
